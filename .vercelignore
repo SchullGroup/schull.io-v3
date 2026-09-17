@@ -1,0 +1,14 @@
+# Build output — Vercel builds from source
+.next
+out
+
+# Local-only
+node_modules
+.vercel-token
+.files.json
+.env*.local
+
+# Not needed at build time
+docs
+scripts
+README.md

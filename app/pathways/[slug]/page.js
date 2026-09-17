@@ -1,0 +1,379 @@
+import { notFound } from 'next/navigation';
+import {
+  Reveal,
+  Accent,
+  Scallop,
+  Btn,
+  Accordion,
+  CheckIcon,
+  Icon,
+} from '../../../components/ui';
+import {
+  PATHWAYS,
+  getPathway,
+  HOW_YOU_LEARN,
+  WHAT_YOU_NEED,
+  HOW_ASSESSED,
+  PATHWAY_FAQS,
+  PRICING_COVERS,
+  DEFAULT_ROUTE_FOOTNOTE,
+} from '../../../content/pathways';
+import { getSchool } from '../../../content/schools';
+import { SCHOOL_IMG } from '../../../content/images';
+
+export function generateStaticParams() {
+  return PATHWAYS.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const p = getPathway(slug);
+  if (!p) return {};
+  return { title: p.name, description: p.promise };
+}
+
+export default async function PathwayPage({ params }) {
+  const { slug } = await params;
+  const p = getPathway(slug);
+  if (!p) notFound();
+  const school = getSchool(p.school);
+
+  return (
+    <>
+      {/* ---- Opening ---- */}
+      <section className="page-hero page-hero--left bg-cream">
+        <div className="container">
+          <Reveal immediate>
+            <p className="pill" style={{ marginBottom: 22 }}>
+              <span className="dot" />
+              {school?.name}
+            </p>
+          </Reveal>
+          <Reveal immediate delay={80}>
+            <h1 className="display" style={{ maxWidth: '17ch' }}>
+              {p.name}
+            </h1>
+          </Reveal>
+          <Reveal immediate delay={160}>
+            <p className="lede" style={{ marginTop: 22 }}>
+              {p.promise}
+            </p>
+          </Reveal>
+          <Reveal immediate delay={240}>
+            <div className="btn-row">
+              <Btn href="/contact" variant="primary" size="lg">
+                Start this pathway
+              </Btn>
+              <Btn href="/placement-assessment" variant="secondary" size="lg">
+                Take the placement assessment
+              </Btn>
+            </div>
+          </Reveal>
+          <Reveal immediate delay={320}>
+            <p className="body-sm" style={{ marginTop: 18, fontSize: 14 }}>
+              You will register and pay on Schull.io, and your full pathway unlocks automatically.
+            </p>
+          </Reveal>
+          {p.openingNote && (
+            <Reveal immediate delay={400}>
+              <div className="note-panel" style={{ marginTop: 28, maxWidth: '62ch' }}>
+                <p className="body-sm" style={{ margin: 0 }}>
+                  {p.openingNote}
+                </p>
+              </div>
+            </Reveal>
+          )}
+        </div>
+      </section>
+
+      {/* ---- At a glance ---- */}
+      <section className="bg-cream" style={{ paddingBottom: 96 }}>
+        <div className="container">
+          <Reveal>
+            <div className="glance">
+              <Glance k="Career School" v={school?.short} />
+              <Glance k="You enter at" v="Foundation or Professional" />
+              <Glance k="How you learn" v="Live + self paced" />
+              <Glance k="Capstone" v="One, independent" />
+              <Glance k="Duration" v="[To be confirmed]" />
+              <Glance k="Courses" v="[To be confirmed]" />
+              <Glance k="Projects" v="[To be confirmed]" />
+              <Glance k="Price" v="[To be confirmed]" />
+            </div>
+          </Reveal>
+          <Reveal delay={80}>
+            <div className="media media--lg" style={{ aspectRatio: '21/9', marginTop: 32 }}>
+              <img src={SCHOOL_IMG[p.school]} alt="" />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ---- Is this pathway for you? ---- */}
+      <Scallop to="sky" />
+      <section className="section bg-sky">
+        <div className="container">
+          <div className="split">
+            <Reveal>
+              <h2 className="h2">
+                Is this pathway <Accent>for you?</Accent>
+              </h2>
+            </Reveal>
+            <Reveal delay={80}>
+              <div>
+                <div className="card" style={{ marginBottom: 16 }}>
+                  <p className="eyebrow" style={{ marginBottom: 10, color: 'var(--blue)' }}>
+                    Yes, if
+                  </p>
+                  <p style={{ margin: 0, fontSize: 17 }}>{p.forYou}</p>
+                </div>
+                <div className="card" style={{ background: 'rgba(255,255,255,0.6)' }}>
+                  <p className="eyebrow" style={{ marginBottom: 10 }}>
+                    Probably not, if
+                  </p>
+                  <p style={{ margin: 0, fontSize: 17, color: 'var(--ink-600)' }}>{p.notForYou}</p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ---- By the end of this pathway ---- */}
+      <Scallop to="cream" />
+      <section className="section bg-cream">
+        <div className="container">
+          <div className="split">
+            <Reveal>
+              <h2 className="h2">
+                By the end of this <Accent>pathway</Accent>
+              </h2>
+            </Reveal>
+            <Reveal delay={80}>
+              <ul className="list-check">
+                {p.outcomes.map((o) => (
+                  <li key={o}>
+                    <CheckIcon />
+                    {o}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ---- The route, stage by stage ---- */}
+      <Scallop to="mint" />
+      <section className="section bg-mint">
+        <div className="container">
+          <div className="split split--sticky split--40-60">
+            <div className="sticky-col">
+              <Reveal>
+                <h2 className="h2">
+                  The route, stage by <Accent>stage</Accent>
+                </h2>
+              </Reveal>
+              <Reveal delay={80}>
+                <p className="body-sm" style={{ marginTop: 24, maxWidth: '42ch' }}>
+                  {p.routeFootnote || DEFAULT_ROUTE_FOOTNOTE}
+                </p>
+              </Reveal>
+            </div>
+
+            <div className="timeline">
+              {p.route.map((r, i) => (
+                <Reveal key={r.stage} delay={i * 80}>
+                  <div className={`timeline__item ${i === p.route.length - 1 ? 'timeline__item--last' : ''}`}>
+                    <span className="timeline__dot">{i + 1}</span>
+                    <h3 className="h4" style={{ marginBottom: 6 }}>
+                      {r.stage}
+                    </h3>
+                    <p className="body-sm" style={{ margin: 0, maxWidth: '58ch' }}>
+                      {r.text}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ---- How you learn ---- */}
+      <Scallop to="cream" />
+      <section className="section bg-cream">
+        <div className="container">
+          <Reveal>
+            <h2 className="h2" style={{ marginBottom: 48, maxWidth: '14ch' }}>
+              How you <Accent>learn</Accent>
+            </h2>
+          </Reveal>
+          <div className="grid grid-3">
+            {HOW_YOU_LEARN.map((h, i) => (
+              <Reveal key={h} delay={(i % 3) * 80}>
+                <div className="card" style={{ height: '100%' }}>
+                  <span className="icon-tile" style={{ marginBottom: 16 }}>
+                    <Icon name={['play', 'users', 'book', 'check', 'brief', 'flag'][i]} color="#1077E5" />
+                  </span>
+                  <p style={{ margin: 0, fontSize: 16.5, lineHeight: 1.5 }}>{h}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ---- Courses in this pathway ---- */}
+      <Scallop to="sand" />
+      <section className="section bg-sand">
+        <div className="container">
+          <Reveal>
+            <h2 className="h2" style={{ marginBottom: 32, maxWidth: '18ch' }}>
+              Courses in this <Accent>pathway</Accent>
+            </h2>
+          </Reveal>
+          <Reveal delay={80}>
+            <div className="empty">
+              <h3 className="h3">The course list is being finalised</h3>
+              <p className="body-sm" style={{ maxWidth: '52ch', marginInline: 'auto' }}>
+                Each course will show here with a title, a one-line description and how long it takes.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ---- What you need + How you are assessed ---- */}
+      <Scallop to="cream" />
+      <section className="section bg-cream">
+        <div className="container">
+          <div className="split">
+            <Reveal>
+              <div>
+                <h2 className="h3" style={{ fontSize: 'clamp(26px,3vw,38px)', marginBottom: 24 }}>
+                  What you need to start
+                </h2>
+                <ul className="list-check">
+                  {WHAT_YOU_NEED.map((w) => (
+                    <li key={w}>
+                      <CheckIcon />
+                      {w}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+            <Reveal delay={80}>
+              <div>
+                <h2 className="h3" style={{ fontSize: 'clamp(26px,3vw,38px)', marginBottom: 24 }}>
+                  How you are assessed
+                </h2>
+                <ul className="list-check">
+                  {HOW_ASSESSED.map((a) => (
+                    <li key={a}>
+                      <CheckIcon color="#FA9A19" />
+                      {a}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ---- Pricing ---- */}
+      <Scallop to="navy" />
+      <section className="section bg-navy">
+        <div className="container">
+          <div className="split">
+            <Reveal>
+              <div>
+                <h2 className="h2">
+                  What your payment <Accent>covers</Accent>
+                </h2>
+                <p className="lede" style={{ marginTop: 20 }}>
+                  {PRICING_COVERS}
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={80}>
+              <div className="card" style={{ background: '#fff' }}>
+                <p className="eyebrow" style={{ marginBottom: 8 }}>
+                  {p.certificate}
+                </p>
+                <p
+                  className="h2"
+                  style={{ fontSize: 'clamp(34px,4vw,52px)', margin: '0 0 6px', color: 'var(--navy)' }}
+                >
+                  [Price]
+                </p>
+                <p className="body-sm" style={{ marginBottom: 24 }}>
+                  One payment. Everything in the pathway.
+                </p>
+                <Btn href="/contact" variant="primary" size="block">
+                  Start this pathway
+                </Btn>
+                <p className="body-sm" style={{ marginTop: 16, marginBottom: 0, fontSize: 13.5 }}>
+                  You will be taken to Schull.io to create your account and pay. Your access opens as soon as payment
+                  is confirmed.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ---- FAQ ---- */}
+      <Scallop to="cream" />
+      <section className="section bg-cream">
+        <div className="container">
+          <div className="split split--sticky">
+            <div className="sticky-col">
+              <Reveal>
+                <h2 className="h2">
+                  Common questions about this <Accent>pathway</Accent>
+                </h2>
+              </Reveal>
+            </div>
+            <Reveal delay={80}>
+              <Accordion items={PATHWAY_FAQS} />
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ---- Closing ---- */}
+      <Scallop to="sand" />
+      <section className="section bg-sand" style={{ textAlign: 'center' }}>
+        <div className="container">
+          <Reveal>
+            <h2 className="h2" style={{ maxWidth: '16ch', marginInline: 'auto' }}>
+              Choose your career. Build your <Accent>future</Accent>.
+            </h2>
+          </Reveal>
+          <Reveal delay={80}>
+            <div className="btn-row" style={{ justifyContent: 'center', marginTop: 30 }}>
+              <Btn href="/contact" variant="primary" size="lg">
+                Start this pathway
+              </Btn>
+              <Btn href="/contact" variant="secondary" size="lg">
+                Talk to an advisor
+              </Btn>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function Glance({ k, v }) {
+  return (
+    <div className="glance__cell">
+      <div className="glance__k">{k}</div>
+      <div className="glance__v">{v}</div>
+    </div>
+  );
+}
