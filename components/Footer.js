@@ -24,22 +24,20 @@ export default function Footer() {
             <div>
               <p className="footer__h">Learn</p>
               <ul className="footer__list">
-                <li><Link href="/career-schools">Career Schools</Link></li>
-                <li><Link href="/pathways">Career Pathways</Link></li>
+                <li><Link href="/career-fields">Career Fields</Link></li>
                 <li><Link href="/placement-assessment">Placement Assessment</Link></li>
                 <li><Link href="/success-stories">Success Stories</Link></li>
               </ul>
             </div>
 
             <div>
-              <p className="footer__h">Schools</p>
+              <p className="footer__h">Career Fields</p>
               <ul className="footer__list">
-                {SCHOOLS.slice(0, 5).map((s) => (
+                {SCHOOLS.map((s) => (
                   <li key={s.slug}>
-                    <Link href={`/career-schools/${s.slug}`}>{s.short}</Link>
+                    <Link href={`/pathways/${s.slug}`}>{s.short}</Link>
                   </li>
                 ))}
-                <li><Link href="/career-schools">View all seven</Link></li>
               </ul>
             </div>
 

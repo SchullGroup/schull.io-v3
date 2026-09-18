@@ -20,6 +20,7 @@ import {
 } from '../../../content/pathways';
 import { getSchool } from '../../../content/schools';
 import { SCHOOL_IMG } from '../../../content/images';
+import { PATHWAY_DETAIL } from '../../../content/site';
 
 export function generateStaticParams() {
   return PATHWAYS.map((p) => ({ slug: p.slug }));
@@ -91,7 +92,7 @@ export default async function PathwayPage({ params }) {
         <div className="container">
           <Reveal>
             <div className="glance">
-              <Glance k="Career School" v={school?.short} />
+              <Glance k="Career Field" v={school?.short} />
               <Glance k="You enter at" v="Foundation or Professional" />
               <Glance k="How you learn" v="Live + self paced" />
               <Glance k="Capstone" v="One, independent" />
@@ -101,7 +102,27 @@ export default async function PathwayPage({ params }) {
               <Glance k="Price" v="[To be confirmed]" />
             </div>
           </Reveal>
-          <Reveal delay={80}>
+
+          {/* Skim aid. The route section below explains WHEN each of these is
+              taught — this row is here so it is scannable from the top. */}
+          {school?.learnList?.length > 0 && (
+            <Reveal delay={80}>
+              <div style={{ marginTop: 32 }}>
+                <p className="eyebrow" style={{ marginBottom: 12 }}>
+                  {PATHWAY_DETAIL.learnHead}
+                </p>
+                <div className="chip-row">
+                  {school.learnList.map((l) => (
+                    <span className="chip" key={l}>
+                      {l}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          )}
+
+          <Reveal delay={160}>
             <div className="media media--lg" style={{ aspectRatio: '21/9', marginTop: 32 }}>
               <img src={SCHOOL_IMG[p.school]} alt="" />
             </div>
@@ -199,6 +220,42 @@ export default async function PathwayPage({ params }) {
           </div>
         </div>
       </section>
+
+      {/* ---- Where it leads ---- */}
+      {school?.leads?.length > 0 && (
+        <>
+          <Scallop to="sun" />
+          <section className="section bg-sun">
+            <div className="container">
+              <div className="split">
+                <Reveal>
+                  <div>
+                    <h2 className="h2">
+                      {PATHWAY_DETAIL.leadsH2a} <Accent>{PATHWAY_DETAIL.leadsH2accent}</Accent>
+                    </h2>
+                    <p className="lede" style={{ marginTop: 20, color: 'var(--ink-700)' }}>
+                      {PATHWAY_DETAIL.leadsLede}
+                    </p>
+                  </div>
+                </Reveal>
+                <Reveal delay={80}>
+                  <div className="chip-row">
+                    {school.leads.map((l) => (
+                      <span
+                        className="chip chip--blue"
+                        key={l}
+                        style={{ fontSize: 15, padding: '10px 18px' }}
+                      >
+                        {l}
+                      </span>
+                    ))}
+                  </div>
+                </Reveal>
+              </div>
+            </div>
+          </section>
+        </>
+      )}
 
       {/* ---- How you learn ---- */}
       <Scallop to="cream" />

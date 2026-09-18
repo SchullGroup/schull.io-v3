@@ -11,7 +11,7 @@ import {
   Icon,
   CheckIcon,
 } from '../components/ui';
-import { HOME } from '../content/site';
+import { HOME, CTA } from '../content/site';
 import { SCHOOLS } from '../content/schools';
 import { PATHWAYS } from '../content/pathways';
 import { IMG } from '../content/images';
@@ -23,7 +23,6 @@ const SCHOOL_ICONS = {
   data: 'chart',
   'quality-assurance': 'check',
   'product-management': 'brief',
-  'career-and-workplace-readiness': 'users',
 };
 
 export default function Home() {
@@ -53,8 +52,8 @@ export default function Home() {
 
           <Reveal immediate delay={240}>
             <div className="btn-row">
-              <Btn href="/career-schools" variant="primary" size="lg">
-                Explore our Career Schools
+              <Btn href="/career-fields" variant="primary" size="lg">
+                {CTA.exploreFields}
               </Btn>
               <Btn href="/placement-assessment" variant="secondary" size="lg">
                 Take the placement assessment
@@ -151,7 +150,7 @@ export default function Home() {
       </section>
 
       {/* ---------------------------------------------------------
-          5. SEVEN CAREER SCHOOLS
+          5. SIX CAREER FIELDS
           --------------------------------------------------------- */}
       <Scallop to="sky" />
       <section className="section bg-sky">
@@ -159,12 +158,12 @@ export default function Home() {
           <div className="section-head section-head--split">
             <Reveal>
               <h2 className="h2">
-                Seven Career <Accent>Schools</Accent>
+                {HOME.fieldsHeading.h2a}<br /><Accent>{HOME.fieldsHeading.h2accent}</Accent>
               </h2>
             </Reveal>
             <Reveal delay={80}>
               <p className="lede" style={{ color: 'var(--ink-700)' }}>
-                {HOME.schoolsIntro}
+                {HOME.fieldsIntro}
               </p>
             </Reveal>
           </div>
@@ -172,14 +171,14 @@ export default function Home() {
           <div className="grid grid-3">
             {SCHOOLS.map((s, i) => (
               <Reveal key={s.slug} delay={(i % 3) * 80}>
-                <Link href={`/career-schools/${s.slug}`} className="school-card" style={{ background: cardFill(i) }}>
+                <Link href={`/pathways/${s.slug}`} className="school-card" style={{ background: cardFill(i) }}>
                   <span className="icon-tile">
                     <Icon name={SCHOOL_ICONS[s.slug]} color="#071C3F" />
                   </span>
                   <h3 className="h4">{s.name}</h3>
                   <p>{s.homeLine}</p>
                   <span className="arrow-link">
-                    Explore school
+                    {CTA.exploreThisField}
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                       <path d="M2.5 8h11m0 0L9 3.5M13.5 8L9 12.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
@@ -191,8 +190,8 @@ export default function Home() {
 
           <Reveal>
             <div className="btn-row" style={{ justifyContent: 'center', marginTop: 48 }}>
-              <Btn href="/career-schools" variant="primary" size="lg">
-                View all Career Schools
+              <Btn href="/career-fields" variant="primary" size="lg">
+                {CTA.viewAllFields}
               </Btn>
             </div>
           </Reveal>
@@ -291,8 +290,8 @@ export default function Home() {
 
           <Reveal>
             <div className="btn-row" style={{ justifyContent: 'center', marginTop: 48 }}>
-              <Btn href="/pathways" variant="primary" size="lg">
-                Browse Career Pathways
+              <Btn href="/career-fields" variant="primary" size="lg">
+                {CTA.viewAllFields}
               </Btn>
             </div>
           </Reveal>
@@ -319,7 +318,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-3">
-            {PATHWAYS.filter((p) => p.slug !== 'career-and-workplace-readiness').map((p, i) => (
+            {PATHWAYS.map((p, i) => (
               <Reveal key={p.slug} delay={(i % 3) * 80}>
                 <Link href={`/pathways/${p.slug}`} className="outcome-card">
                   <div className="media">
@@ -472,13 +471,13 @@ export default function Home() {
           </Reveal>
           <Reveal delay={160}>
             <p className="lede" style={{ marginInline: 'auto', marginTop: 20 }}>
-              Pick a Career School, choose your pathway and start building.
+              {HOME.closingLede}
             </p>
           </Reveal>
           <Reveal delay={240}>
             <div className="btn-row" style={{ justifyContent: 'center', marginTop: 32 }}>
-              <Btn href="/career-schools" variant="primary" size="lg">
-                Explore our Career Schools
+              <Btn href="/career-fields" variant="primary" size="lg">
+                {CTA.exploreFields}
               </Btn>
               <Btn href="/contact" variant="secondary" size="lg">
                 Talk to an advisor
@@ -498,7 +497,7 @@ export default function Home() {
 }
 
 function cardFill(i) {
-  const fills = ['#ffffff', '#dcefe4', '#fdebcf', '#fbe3dc', '#ffffff', '#d8e8fa', '#f4eee3'];
+  const fills = ['#ffffff', '#dcefe4', '#fdebcf', '#fbe3dc', '#ffffff', '#d8e8fa'];
   return fills[i % fills.length];
 }
 

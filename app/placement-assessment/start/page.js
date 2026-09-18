@@ -276,7 +276,7 @@ function computeResult(answers) {
   const pace = answers.time?.pace || 'a steady pace';
 
   const second =
-    PATHWAYS.find((p) => p.slug !== slug && p.slug !== 'career-and-workplace-readiness') || PATHWAYS[0];
+    PATHWAYS.find((p) => p.slug !== slug) || PATHWAYS[0];
 
   return { pathway, level, pace, second };
 }
