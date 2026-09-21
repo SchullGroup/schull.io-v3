@@ -1,5 +1,5 @@
 import { Reveal, Accent, Scallop, Btn, CheckIcon, Icon } from '../../components/ui';
-import { ABOUT } from '../../content/site';
+import { ABOUT, CTA } from '../../content/site';
 import { IMG } from '../../content/images';
 
 export const metadata = {
@@ -226,8 +226,8 @@ export default function About() {
           </Reveal>
           <Reveal delay={80}>
             <div className="btn-row" style={{ justifyContent: 'center', marginTop: 30 }}>
-              <Btn href="/career-schools" variant="orange" size="lg">
-                Explore Career Schools
+              <Btn href="/career-fields" variant="orange" size="lg">
+                {CTA.exploreFieldsShort}
               </Btn>
               <Btn href="/contact" variant="onnavy" size="lg">
                 Contact us

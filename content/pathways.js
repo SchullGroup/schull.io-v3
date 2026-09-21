@@ -1,6 +1,8 @@
 /**
- * The seven Career Pathways.
- * All copy verbatim from Schull_Academy_Website_Copy.pdf (pathway pages).
+ * The six Career Pathways, one per Career Field.
+ * `school` is the foreign key into SCHOOLS in ./schools.js — see the naming note
+ * at the top of that file before renaming anything.
+ * All copy verbatim from the Schull Academy website copy document.
  */
 
 export const PATHWAYS = [
@@ -286,53 +288,6 @@ export const PATHWAYS = [
     ],
     capstoneOutput:
       'A full product requirements document, strategy and delivery roadmap.',
-  },
-  {
-    slug: 'career-and-workplace-readiness',
-    school: 'career-and-workplace-readiness',
-    name: 'Career and Workplace Readiness Pathway',
-    short: 'Career and Workplace Readiness',
-    certificate: 'Career and Workplace Readiness Certificate',
-    promise:
-      'Skill gets you shortlisted. This is what gets you hired, and what keeps you there.',
-    openingNote:
-      'This track is built into every Career Pathway. Take it on its own if you already have the technical skill and it is the job search that is failing you.',
-    forYou:
-      'This is for you if you can do the work but cannot get the interview, or you get the interview and it goes nowhere, or you are about to graduate and have no idea how to present yourself.',
-    notForYou:
-      'It is probably not for you if you are looking for technical training. This one is about everything around the technical work.',
-    outcomes: [
-      'You will have a CV that survives the first thirty seconds.',
-      'You will have a LinkedIn profile and a portfolio that work for you while you sleep.',
-      'You will handle an interview without falling apart on the questions everybody gets asked.',
-      'You will know how to find, price and manage freelance work.',
-      'You will communicate and conduct yourself the way professionals who get kept do.',
-    ],
-    route: [
-      {
-        stage: 'Foundation',
-        text: 'Communication, emotional intelligence and professional conduct. You finish this stage able to carry yourself well with colleagues, managers and clients.',
-      },
-      {
-        stage: 'Professional',
-        text: 'CV, LinkedIn, portfolio building, interview preparation, freelancing and career strategy. You finish this stage with your professional presence built, not planned.',
-      },
-      {
-        stage: 'Portfolio',
-        text: 'A complete professional profile: CV, LinkedIn, portfolio and application materials.',
-      },
-      {
-        stage: 'Capstone',
-        text: 'Your full professional profile plus a live interview simulation, assessed against the standard an employer would apply.',
-      },
-      {
-        stage: 'Certification',
-        text: 'Your Career and Workplace Readiness Certificate, issued with a verification link an employer can check.',
-      },
-    ],
-    // per-pathway footnote override
-    routeFootnote:
-      'Learners on any other pathway complete this track inside their pathway. It is only taken on its own if you are not enrolled in another one.',
   },
 ];
 
