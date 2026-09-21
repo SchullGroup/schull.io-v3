@@ -12,13 +12,24 @@ export default function Footer() {
             <div>
               <Brand />
               <p className="body-sm" style={{ color: 'rgba(255,255,255,0.6)', marginTop: 18, maxWidth: '34ch' }}>
-                The career learning arm of Schull Technologies, delivered on the Schull.io platform.
+                Building a community of talented professionals based in Nigeria and Sub-Saharan Africa, fit for migration and remote services in the emerging cloud and virtualization technology.
               </p>
-              <p className="body-sm" style={{ color: 'rgba(255,255,255,0.45)', marginTop: 14 }}>
-                [Email address. Phone and WhatsApp.]
-                <br />
-                [Office address. Support hours.]
-              </p>
+              <div style={{ marginTop: 18, color: 'rgba(255,255,255,0.6)' }}>
+                <p className="body-sm" style={{ margin: 0, marginBottom: 14 }}>
+                  <strong style={{ color: 'rgba(255,255,255,0.8)' }}>☎ Tel</strong><br />
+                  <a href="tel:+12404217887" style={{ color: 'inherit' }}>+1 (240) 421 7887</a><br />
+                  <a href="tel:+2348101854429" style={{ color: 'inherit' }}>+234 810 185 4429</a>
+                </p>
+                <p className="body-sm" style={{ margin: 0, marginBottom: 14 }}>
+                  <strong style={{ color: 'rgba(255,255,255,0.8)' }}>📍 Address</strong><br />
+                  2nd Floor, 42 Montgomery Road, Sabo, Yaba, Lagos State, Nigeria<br />
+                  1738 Elton Road, Suite 130, Silver Spring, MD 20903, USA
+                </p>
+                <p className="body-sm" style={{ margin: 0 }}>
+                  <strong style={{ color: 'rgba(255,255,255,0.8)' }}>✉ Mail</strong><br />
+                  <a href="mailto:admin@schull.io" style={{ color: 'inherit' }}>admin@schull.io</a>
+                </p>
+              </div>
             </div>
 
             <div>

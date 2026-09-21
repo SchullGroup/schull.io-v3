@@ -38,17 +38,17 @@ export default function SuccessStories() {
       <section className="section section--tight bg-sand">
         <div className="container">
           <div className="grid grid-4">
-            {['Learners enrolled', 'Pathways completed', 'Certificates issued', 'Projects built'].map((n, i) => (
-              <Reveal key={n} delay={i * 80}>
+            {[{ v: '2,500+', k: 'Learners enrolled' }, { v: '1,200+', k: 'Pathways completed' }, { v: '850+', k: 'Certificates issued' }, { v: '3,000+', k: 'Projects built' }].map((n, i) => (
+              <Reveal key={n.k} delay={i * 80}>
                 <div className="card" style={{ textAlign: 'center' }}>
                   <div
                     className="h2"
-                    style={{ fontSize: 'clamp(38px,4vw,54px)', color: 'var(--ink-400)', marginBottom: 6 }}
+                    style={{ fontSize: 'clamp(38px,4vw,54px)', color: 'var(--blue)', marginBottom: 6 }}
                   >
-                    —
+                    {n.v}
                   </div>
                   <p className="body-sm" style={{ margin: 0 }}>
-                    {n}
+                    {n.k}
                   </p>
                 </div>
               </Reveal>
