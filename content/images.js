@@ -41,7 +41,8 @@ export const IMG = {
   av3: img('hero-c'),
 };
 
-/** School / pathway → image */
+/** Career Field / pathway slug → image. Keyed by slug; also used for pathways
+ *  via SCHOOL_IMG[p.school]. */
 export const SCHOOL_IMG = {
   'ai-and-automation': IMG.aiWork,
   'cloud-and-devops': IMG.serverRoom,
@@ -49,5 +50,4 @@ export const SCHOOL_IMG = {
   data: IMG.dataDash,
   'quality-assurance': IMG.testing,
   'product-management': IMG.productTeam,
-  'career-and-workplace-readiness': IMG.mentor,
 };

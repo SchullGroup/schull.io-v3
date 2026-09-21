@@ -26,10 +26,8 @@ npm start
 | Route | Page |
 |---|---|
 | `/` | Home — 13 sections |
-| `/career-schools` | All seven schools, alternating full-width blocks |
-| `/career-schools/[slug]` | School detail ×7 |
-| `/pathways` | Pathways index |
-| `/pathways/[slug]` | Pathway detail ×7, one shared template |
+| `/career-fields` | The only index — six fields, alternating full-width blocks, then the career readiness section |
+| `/pathways/[slug]` | **One page per subject ×6**, one shared template |
 | `/placement-assessment` | Assessment landing |
 | `/placement-assessment/start` | Working 4-question flow + result |
 | `/about` | About Us |
@@ -47,8 +45,34 @@ content/      all copy and imagery, no strings in components
 docs/PRD.md   the full product requirements document
 ```
 
-**All copy is verbatim from `Schull_Academy_Website_Copy.pdf` and is locked.**
-Edit `content/*.js`, never the page files, to change wording.
+**All copy is verbatim from the client copy document and is locked.**
+Edit `content/*.js`, never the page files, to change wording. Some older
+strings still sit inline in page files; move them into `content/` as you touch
+them.
+
+### One page per subject
+
+Each subject used to have two pages — a field page (skills, job titles) and a
+pathway page (route, price, buy button). They merged into one at
+`/pathways/[slug]`, which now carries the skill tags under the at-a-glance bar
+and a "Where it leads" section after the route. `/career-fields/[slug]` and the
+`/pathways` index are gone; `next.config.mjs` redirects both.
+
+The skill tags are deliberately a *skim aid* — the route section already names
+every one of them in prose, and explains when you learn each. Do not add a third
+copy in its own section.
+
+### Naming — deliberate, do not "fix" it
+
+**"Career Field"** is the user-facing category word. The six entities inside it
+keep their **"School of …"** names (`School of Data`, and so on). Both were
+agreed in the 2026-09-18 meeting: rename the category, retain the school
+terminology for the entities themselves.
+
+So the internal identifiers stay as "school" too — `SCHOOLS`, `getSchool`,
+`SCHOOL_IMG`, `SCHOOL_ICONS`, `pathways[].school`, `.school-card` — because they
+match the entity names, not the category word. A global find-and-replace of
+"school" → "field" will break this.
 
 ## Design system
 

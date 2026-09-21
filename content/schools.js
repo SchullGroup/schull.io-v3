@@ -1,6 +1,13 @@
 /**
- * The seven Career Schools.
- * All copy verbatim from Schull_Academy_Website_Copy.pdf (Career Schools page).
+ * The six Career Fields.
+ *
+ * Naming, deliberately inconsistent — do not "fix" this with a find-and-replace:
+ * "Career Field" is the user-facing category word, but each entity keeps its own
+ * "School of ..." name. The internal identifiers here (SCHOOLS, getSchool, and
+ * SCHOOL_IMG / pathways[].school elsewhere) stay as "school" because they match
+ * those names, not the category word.
+ *
+ * All copy verbatim from the Schull Academy website copy document.
  */
 
 export const SCHOOLS = [
@@ -166,32 +173,6 @@ export const SCHOOLS = [
       'Resource management',
     ],
     leads: ['Product Analyst', 'Associate Product Manager', 'Product Owner'],
-  },
-  {
-    slug: 'career-and-workplace-readiness',
-    name: 'School of Career and Workplace Readiness',
-    short: 'Career and Workplace Readiness',
-    block: 'mint',
-    homeLine:
-      'Communicate, interview, present your work and carry yourself like a professional.',
-    forWho:
-      'For everyone. This school is built into every Career Pathway and is also available on its own.',
-    learn:
-      'Communication, emotional intelligence, CV writing, LinkedIn, interview preparation, portfolio building, freelancing, career strategy and professional conduct.',
-    learnList: [
-      'Communication',
-      'Emotional intelligence',
-      'CV writing',
-      'LinkedIn',
-      'Interview preparation',
-      'Portfolio building',
-      'Freelancing',
-      'Career strategy',
-      'Professional conduct',
-    ],
-    leads: [],
-    leadsNote:
-      'This one is not about a job title. It is about being the candidate who gets chosen and the professional who gets kept.',
   },
 ];
 

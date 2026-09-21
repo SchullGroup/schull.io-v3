@@ -7,6 +7,37 @@
 
 ---
 
+> ## ⚠️ Superseded in places — taxonomy changed 18 September 2026
+>
+> The body of this document below still uses the **original** taxonomy. It is
+> kept as written, as the record of what was originally specified. Where it
+> disagrees with the list below, **the list below wins**.
+>
+> Changed by the revised client copy document and the 2026-09-18 meeting:
+>
+> 1. **"Career School" → "Career Field"** as the category word. The entities
+>    themselves keep their "School of …" names, and so do the internal code
+>    identifiers. See the naming note in `README.md`.
+> 2. **Seven Career Schools → six Career Fields.** *Career and Workplace
+>    Readiness* is no longer a standalone field or pathway. Career readiness is
+>    part of every pathway, explained in a new section on the Career Fields
+>    index (`#career-readiness`).
+> 3. **URLs:** `/career-schools` → `/career-fields`. Redirects are in
+>    `next.config.mjs`.
+> 4. **Primary nav:** Placement Assessment removed (duplicated the header's
+>    "Take the assessment" button); Success Stories added after About Us.
+> 5. **One page per subject.** The field detail page and the pathway page merged
+>    into a single page at `/pathways/[slug]`, carrying the skill tags and job
+>    titles alongside the route and pricing. `/career-fields/[slug]` and the
+>    `/pathways` index no longer exist — `/career-fields` is the only index.
+>    §4.3 and §4.4 below describe the old two-page split.
+>
+> Still open from the same meeting, not yet built: per-pathway "what you will
+> learn / where it leads" detail, and pointing "Start this pathway" at the LMS
+> sign-up page.
+
+---
+
 ## 0. How to read this document
 
 This is **one PRD for two builds**.
