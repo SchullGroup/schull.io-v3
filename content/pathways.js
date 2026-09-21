@@ -25,15 +25,32 @@ export const PATHWAYS = [
       'You will build applications on large language models and agentic systems.',
       'You will present your work to an employer or client with a portfolio behind it.',
     ],
-    route: [
+    tracks: [
       {
-        stage: 'Foundation',
-        text: 'AI fundamentals, prompt engineering, AI tools and ethical AI. You finish this stage understanding how AI works and using current tools with judgement.',
+        name: 'Foundation track',
+        text: 'For you if you are new to AI, or have only used tools like chatbots casually. Covers AI fundamentals, prompt engineering, AI tools and ethical AI. You finish this track understanding how AI works and using current tools with judgement.',
       },
       {
-        stage: 'Professional',
-        text: 'AI automation, workflow design, no-code AI, API integration, LLM engineering and agentic AI. You finish this stage able to design and build working solutions.',
+        name: 'Professional track',
+        text: 'For you if you already understand the basics of AI and want to build with it. Covers AI automation, workflow design, no-code AI, API integration, LLM engineering and agentic AI. You finish this track able to design and build working automation and AI solutions.',
       },
+    ],
+    courses: {
+      foundation: [
+        { name: 'AI Fundamentals', text: 'What AI is, how models learn, and where AI actually works in business.' },
+        { name: 'Prompt Engineering', text: 'Writing prompts that produce reliable, useful output every time.' },
+        { name: 'AI Tools', text: 'Using current AI tools for research, writing, analysis and everyday productivity.' },
+        { name: 'Ethical AI', text: 'Bias, privacy, safety, and knowing when AI is the wrong answer.' },
+      ],
+      professional: [
+        { name: 'AI Automation and Workflow Design', text: 'Mapping business processes and automating them end to end.' },
+        { name: 'No-Code AI', text: 'Building AI solutions on no-code and low-code platforms.' },
+        { name: 'API Integration', text: 'Connecting AI models into the systems and tools a business already uses.' },
+        { name: 'LLM Engineering', text: 'Building applications on large language models.' },
+        { name: 'Agentic AI', text: 'Designing AI agents that plan and carry out multi-step tasks.' },
+      ],
+    },
+    completes: [
       {
         stage: 'Portfolio',
         text: 'Mini projects and real-world applications, built and documented, so you have evidence of what you can do.',
@@ -72,15 +89,31 @@ export const PATHWAYS = [
       'You will monitor a live environment and troubleshoot it when something breaks.',
       'You will deploy a working application into the cloud and explain every decision you made.',
     ],
-    route: [
+    tracks: [
       {
-        stage: 'Foundation',
-        text: 'Cloud fundamentals, Linux and networking. You finish this stage understanding how cloud environments are put together and comfortable working on a server.',
+        name: 'Foundation track',
+        text: 'For you if you are new to infrastructure and have never really worked on a server. Covers cloud fundamentals, Linux and networking. You finish this track understanding how cloud environments are put together and comfortable working on a server.',
       },
       {
-        stage: 'Professional',
-        text: 'AWS, Huawei Cloud, DevOps practice, CI/CD and MLOps. You finish this stage able to deploy, automate and operate real environments.',
+        name: 'Professional track',
+        text: 'For you if you are already comfortable with Linux and networking basics, or you have supported systems before. Covers AWS, Huawei Cloud, DevOps practice, CI/CD and MLOps. You finish this track able to deploy, automate and operate real environments.',
       },
+    ],
+    courses: {
+      foundation: [
+        { name: 'Cloud Fundamentals', text: 'How cloud computing works, the main service models, and what it costs to run things in the cloud.' },
+        { name: 'Linux Essentials', text: 'Working confidently on the command line and administering a Linux server.' },
+        { name: 'Networking Fundamentals', text: 'How networks, IP addressing, DNS and traffic actually work.' },
+      ],
+      professional: [
+        { name: 'AWS', text: 'Building and managing infrastructure on Amazon Web Services.' },
+        { name: 'Huawei Cloud', text: 'Building and managing infrastructure on Huawei Cloud.' },
+        { name: 'DevOps Practice', text: 'Version control, containers, infrastructure as code, and how DevOps teams work.' },
+        { name: 'CI/CD Pipelines', text: 'Automating how code is tested, built and deployed.' },
+        { name: 'MLOps', text: 'Deploying and running machine learning models in production.' },
+      ],
+    },
+    completes: [
       {
         stage: 'Portfolio',
         text: 'Deployments, configurations and automation you have built and documented.',
@@ -119,15 +152,30 @@ export const PATHWAYS = [
       'You will monitor systems, spot suspicious activity and respond to incidents.',
       'You will document security findings the way a client or employer expects to receive them.',
     ],
-    route: [
+    tracks: [
       {
-        stage: 'Foundation',
-        text: 'Cybersecurity fundamentals, systems and networking basics, and the core security tools. You finish this stage able to speak the language and use the tools.',
+        name: 'Foundation track',
+        text: 'For you if you are new to security or to IT generally. Covers cybersecurity fundamentals, systems and networking basics, and the core security tools. You finish this track able to speak the language of security and use the tools.',
       },
       {
-        stage: 'Professional',
-        text: 'Vulnerability assessment, penetration testing, security operations and security monitoring. You finish this stage able to do the work, not just describe it.',
+        name: 'Professional track',
+        text: 'For you if you already know the fundamentals, or you come from IT support or networking. Covers vulnerability assessment, penetration testing, security operations and security monitoring. You finish this track able to do the work, not just describe it.',
       },
+    ],
+    courses: {
+      foundation: [
+        { name: 'Cybersecurity Fundamentals', text: 'Threats, attacks, risk, and the principles of defending systems.' },
+        { name: 'Systems and Networking for Security', text: 'The operating systems and networks you will be protecting.' },
+        { name: 'Security Tools', text: 'The core tools security professionals use every day.' },
+      ],
+      professional: [
+        { name: 'Vulnerability Assessment', text: 'Finding, scoring and reporting weaknesses in systems.' },
+        { name: 'Penetration Testing', text: 'Controlled, authorised testing of how systems can be broken into.' },
+        { name: 'Security Operations', text: 'How a security team detects, investigates and responds to incidents.' },
+        { name: 'Security Monitoring', text: 'Logs, alerts, and spotting suspicious activity before it becomes a breach.' },
+      ],
+    },
+    completes: [
       {
         stage: 'Portfolio',
         text: 'Assessments, investigations and reports you have produced and documented.',
@@ -166,15 +214,31 @@ export const PATHWAYS = [
       'You will build dashboards that people use rather than admire.',
       'You will present findings and a recommendation to people who are not technical.',
     ],
-    route: [
+    tracks: [
       {
-        stage: 'Foundation',
-        text: 'Data fundamentals, spreadsheets and SQL. You finish this stage able to get to the data and ask it questions.',
+        name: 'Foundation track',
+        text: 'For you if you are new to data work, or have only used spreadsheets casually. Covers data fundamentals, spreadsheets and SQL. You finish this track able to get to the data and ask it questions.',
       },
       {
-        stage: 'Professional',
-        text: 'Data analysis, ETL, data modelling, Power BI and business intelligence. You finish this stage able to run the full process from raw data to reporting.',
+        name: 'Professional track',
+        text: 'For you if you are already comfortable with spreadsheets and basic SQL. Covers data analysis, ETL, data modelling, Power BI and business intelligence. You finish this track able to run the full process from raw data to reporting.',
       },
+    ],
+    courses: {
+      foundation: [
+        { name: 'Data Fundamentals', text: 'Types of data, where it comes from, and how organisations use it.' },
+        { name: 'Spreadsheets for Data', text: 'Cleaning, organising and analysing data in Excel and Google Sheets.' },
+        { name: 'SQL', text: 'Querying databases to answer real business questions.' },
+      ],
+      professional: [
+        { name: 'Data Analysis', text: 'Finding patterns, testing assumptions and drawing honest conclusions.' },
+        { name: 'ETL', text: 'Extracting, cleaning and loading data from different sources.' },
+        { name: 'Data Modelling', text: 'Structuring data so it can be reported on reliably.' },
+        { name: 'Power BI', text: 'Building interactive dashboards and reports.' },
+        { name: 'Business Intelligence', text: 'Turning analysis into recommendations that decision makers act on.' },
+      ],
+    },
+    completes: [
       {
         stage: 'Portfolio',
         text: 'Analyses, dashboards and reports you have built and documented.',
@@ -213,15 +277,31 @@ export const PATHWAYS = [
       'You will check how software holds up under load and where it is exposed.',
       'You will report defects clearly enough that developers can act on them without asking you twice.',
     ],
-    route: [
+    tracks: [
       {
-        stage: 'Foundation',
-        text: 'Software testing fundamentals, manual testing and functional testing. You finish this stage able to plan and run structured tests.',
+        name: 'Foundation track',
+        text: 'For you if you are new to software testing. Covers software testing fundamentals, manual testing and functional testing. You finish this track able to plan and run structured tests.',
       },
       {
-        stage: 'Professional',
-        text: 'API testing, integration, regression, performance testing, security testing and test management tools. You finish this stage able to own quality across a product.',
+        name: 'Professional track',
+        text: 'For you if you have tested software before, or you already know the fundamentals. Covers API testing, integration, regression, performance testing, security testing and test management tools. You finish this track able to own quality across a product.',
       },
+    ],
+    courses: {
+      foundation: [
+        { name: 'Software Testing Fundamentals', text: 'Why testing matters, the testing lifecycle, and where QA fits in a software team.' },
+        { name: 'Manual Testing', text: 'Writing test cases and running structured tests by hand.' },
+        { name: 'Functional Testing', text: 'Checking that software does exactly what it is supposed to do.' },
+      ],
+      professional: [
+        { name: 'API Testing', text: 'Testing the systems behind the screen.' },
+        { name: 'Integration and Regression Testing', text: 'Making sure parts work together and new changes do not break old features.' },
+        { name: 'Performance Testing', text: 'How software holds up when real numbers of people use it.' },
+        { name: 'Security Testing', text: 'Finding where an application is exposed.' },
+        { name: 'Test Management Tools', text: 'Planning, tracking and reporting testing work in the tools teams use.' },
+      ],
+    },
+    completes: [
       {
         stage: 'Portfolio',
         text: 'Test plans, executed test cycles and defect reports you have produced.',
@@ -260,15 +340,31 @@ export const PATHWAYS = [
       'You will use product analytics to decide what to do next.',
       'You will manage stakeholders without losing the plot of what you are building.',
     ],
-    route: [
+    tracks: [
       {
-        stage: 'Foundation',
-        text: 'Product management fundamentals, the product lifecycle, and agile and scrum. You finish this stage understanding how products get made and who does what.',
+        name: 'Foundation track',
+        text: 'For you if you are new to product work. Covers product management fundamentals, the product lifecycle, and agile and scrum. You finish this track understanding how products get made and who does what.',
       },
       {
-        stage: 'Professional',
-        text: 'Product strategy, Jira and delivery tooling, product analytics, stakeholder management and resource management. You finish this stage able to run a product, not just describe one.',
+        name: 'Professional track',
+        text: 'For you if you have worked around product teams, or you already know agile. Covers product strategy, Jira and delivery tooling, product analytics, stakeholder management and resource management. You finish this track able to run a product, not just describe one.',
       },
+    ],
+    courses: {
+      foundation: [
+        { name: 'Product Management Fundamentals', text: 'What product managers do, and how they work with users, business and engineering.' },
+        { name: 'Product Lifecycle', text: 'How a product moves from idea to launch, growth and retirement.' },
+        { name: 'Agile and Scrum', text: 'How modern software teams plan and deliver work.' },
+      ],
+      professional: [
+        { name: 'Product Strategy', text: 'Deciding what to build, for whom, and why.' },
+        { name: 'Jira and Delivery Tools', text: 'Running backlogs, sprints and roadmaps in Jira and Atlassian tools.' },
+        { name: 'Product Analytics', text: 'Using data to understand users and decide what to do next.' },
+        { name: 'Stakeholder Management', text: 'Keeping leadership, teams and customers aligned.' },
+        { name: 'Resource Management', text: 'Planning people, time and budget across product work.' },
+      ],
+    },
+    completes: [
       {
         stage: 'Portfolio',
         text: 'Requirements documents, roadmaps and product decisions you have made and defended.',
@@ -291,12 +387,26 @@ export const PATHWAYS = [
   },
 ];
 
-export const DEFAULT_ROUTE_FOOTNOTE =
-  'Your placement assessment decides whether you begin at Foundation or Professional. Everyone completes the portfolio, career readiness, capstone and certification stages.';
-
 export const getPathway = (slug) => PATHWAYS.find((p) => p.slug === slug);
 
 /* ---- sections that repeat identically on every pathway page ---- */
+
+/** Intro line for the "Learning tracks" section, before the two tracks. */
+export const TRACKS_INTRO =
+  'This pathway has two learning tracks. Your placement assessment decides which one you start on.';
+
+/** Closing line for "Learning tracks", after both tracks are described. */
+export const TRACKS_FOOTNOTE =
+  'Start on Foundation and you move into Professional once you complete it. Start on Professional and you go straight in.';
+
+/** Intro line for "What every learner completes", before the four stages. */
+export const COMPLETES_INTRO = 'Whichever track you start on, the pathway finishes the same way.';
+
+/**
+ * Dummy price shown until real pricing is confirmed — see README's
+ * "Still needed before launch" list. Replace before this goes live.
+ */
+export const PLACEHOLDER_PRICE = '₦50,000';
 
 export const HOW_YOU_LEARN = [
   'Self-paced lessons you can take whenever you study.',
