@@ -82,15 +82,19 @@ export default function Contact() {
                     Direct details
                   </p>
                   <p className="body-sm" style={{ margin: 0 }}>
-                    [Email address.]
-                    <br />
-                    [Phone and WhatsApp — click to chat.]
-                    <br />
-                    [Office address.]
-                    <br />
-                    [Support hours.]
-                    <br />
-                    [Social channels.]
+                    <strong>✉ Mail</strong><br />
+                    <a href="mailto:admin@schull.io">admin@schull.io</a>
+                    <br /><br />
+                    <strong>☎ Tel</strong><br />
+                    <a href="tel:+12404217887">+1 (240) 421 7887</a><br />
+                    <a href="tel:+2348101854429">+234 810 185 4429</a>
+                    <br /><br />
+                    <strong>📍 Address</strong><br />
+                    2nd Floor, 42 Montgomery Road, Sabo, Yaba, Lagos State, Nigeria<br />
+                    1738 Elton Road, Suite 130, Silver Spring, MD 20903, USA
+                    <br /><br />
+                    <strong>🔗 Social</strong><br />
+                    <a href="https://linkedin.com/company/schull" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="https://twitter.com/schullio" target="_blank" rel="noopener noreferrer">Twitter</a> · <a href="https://instagram.com/schullio" target="_blank" rel="noopener noreferrer">Instagram</a>
                   </p>
                 </div>
               </div>

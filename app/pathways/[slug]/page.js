@@ -16,7 +16,10 @@ import {
   HOW_ASSESSED,
   PATHWAY_FAQS,
   PRICING_COVERS,
-  DEFAULT_ROUTE_FOOTNOTE,
+  TRACKS_INTRO,
+  TRACKS_FOOTNOTE,
+  COMPLETES_INTRO,
+  PLACEHOLDER_PRICE,
 } from '../../../content/pathways';
 import { getSchool } from '../../../content/schools';
 import { SCHOOL_IMG } from '../../../content/images';
@@ -97,9 +100,9 @@ export default async function PathwayPage({ params }) {
               <Glance k="How you learn" v="Live + self paced" />
               <Glance k="Capstone" v="One, independent" />
               <Glance k="Duration" v="[To be confirmed]" />
-              <Glance k="Courses" v="[To be confirmed]" />
+              <Glance k="Courses" v={`${p.courses.foundation.length + p.courses.professional.length} courses`} />
               <Glance k="Projects" v="[To be confirmed]" />
-              <Glance k="Price" v="[To be confirmed]" />
+              <Glance k="Price" v={PLACEHOLDER_PRICE} />
             </div>
           </Reveal>
 
@@ -184,7 +187,7 @@ export default async function PathwayPage({ params }) {
         </div>
       </section>
 
-      {/* ---- The route, stage by stage ---- */}
+      {/* ---- Learning tracks ---- */}
       <Scallop to="mint" />
       <section className="section bg-mint">
         <div className="container">
@@ -192,26 +195,73 @@ export default async function PathwayPage({ params }) {
             <div className="sticky-col">
               <Reveal>
                 <h2 className="h2">
-                  The route, stage by <Accent>stage</Accent>
+                  Learning <Accent>tracks</Accent>
                 </h2>
               </Reveal>
               <Reveal delay={80}>
                 <p className="body-sm" style={{ marginTop: 24, maxWidth: '42ch' }}>
-                  {p.routeFootnote || DEFAULT_ROUTE_FOOTNOTE}
+                  {TRACKS_INTRO}
+                </p>
+              </Reveal>
+            </div>
+
+            {/* Wrapped so .timeline keeps only its own items as children —
+                its last-item styling (hiding the connecting line) depends on
+                actual DOM last-child, so the footnote must sit outside it. */}
+            <div>
+              <div className="timeline">
+                {p.tracks.map((t, i) => (
+                  <Reveal key={t.name} delay={i * 80}>
+                    <div className={`timeline__item ${i === p.tracks.length - 1 ? 'timeline__item--last' : ''}`}>
+                      <span className="timeline__dot">{i + 1}</span>
+                      <h3 className="h4" style={{ marginBottom: 6 }}>
+                        {t.name}
+                      </h3>
+                      <p className="body-sm" style={{ margin: 0, maxWidth: '58ch' }}>
+                        {t.text}
+                      </p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+              <Reveal delay={p.tracks.length * 80}>
+                <p className="body-sm" style={{ marginTop: 24, maxWidth: '58ch' }}>
+                  {TRACKS_FOOTNOTE}
+                </p>
+              </Reveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ---- What every learner completes ---- */}
+      <Scallop to="cream" />
+      <section className="section bg-cream">
+        <div className="container">
+          <div className="split split--sticky split--40-60">
+            <div className="sticky-col">
+              <Reveal>
+                <h2 className="h2">
+                  What every learner <Accent>completes</Accent>
+                </h2>
+              </Reveal>
+              <Reveal delay={80}>
+                <p className="body-sm" style={{ marginTop: 24, maxWidth: '42ch' }}>
+                  {COMPLETES_INTRO}
                 </p>
               </Reveal>
             </div>
 
             <div className="timeline">
-              {p.route.map((r, i) => (
-                <Reveal key={r.stage} delay={i * 80}>
-                  <div className={`timeline__item ${i === p.route.length - 1 ? 'timeline__item--last' : ''}`}>
+              {p.completes.map((c, i) => (
+                <Reveal key={c.stage} delay={i * 80}>
+                  <div className={`timeline__item ${i === p.completes.length - 1 ? 'timeline__item--last' : ''}`}>
                     <span className="timeline__dot">{i + 1}</span>
                     <h3 className="h4" style={{ marginBottom: 6 }}>
-                      {r.stage}
+                      {c.stage}
                     </h3>
                     <p className="body-sm" style={{ margin: 0, maxWidth: '58ch' }}>
-                      {r.text}
+                      {c.text}
                     </p>
                   </div>
                 </Reveal>
@@ -290,14 +340,46 @@ export default async function PathwayPage({ params }) {
               Courses in this <Accent>pathway</Accent>
             </h2>
           </Reveal>
-          <Reveal delay={80}>
-            <div className="empty">
-              <h3 className="h3">The course list is being finalised</h3>
-              <p className="body-sm" style={{ maxWidth: '52ch', marginInline: 'auto' }}>
-                Each course will show here with a title, a one-line description and how long it takes.
-              </p>
+          <div className="grid grid-2">
+            <div>
+              <Reveal>
+                <p className="eyebrow" style={{ marginBottom: 20 }}>
+                  Foundation track
+                </p>
+              </Reveal>
+              {p.courses.foundation.map((c, i) => (
+                <Reveal key={c.name} delay={i * 80}>
+                  <div style={i > 0 ? { marginTop: 18, paddingTop: 18, borderTop: '1px solid var(--line)' } : undefined}>
+                    <h3 className="h4" style={{ marginBottom: 4 }}>
+                      {c.name}
+                    </h3>
+                    <p className="body-sm" style={{ margin: 0 }}>
+                      {c.text}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
             </div>
-          </Reveal>
+            <div>
+              <Reveal>
+                <p className="eyebrow" style={{ marginBottom: 20 }}>
+                  Professional track
+                </p>
+              </Reveal>
+              {p.courses.professional.map((c, i) => (
+                <Reveal key={c.name} delay={i * 80}>
+                  <div style={i > 0 ? { marginTop: 18, paddingTop: 18, borderTop: '1px solid var(--line)' } : undefined}>
+                    <h3 className="h4" style={{ marginBottom: 4 }}>
+                      {c.name}
+                    </h3>
+                    <p className="body-sm" style={{ margin: 0 }}>
+                      {c.text}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -364,7 +446,7 @@ export default async function PathwayPage({ params }) {
                   className="h2"
                   style={{ fontSize: 'clamp(34px,4vw,52px)', margin: '0 0 6px', color: 'var(--navy)' }}
                 >
-                  [Price]
+                  {PLACEHOLDER_PRICE}
                 </p>
                 <p className="body-sm" style={{ marginBottom: 24 }}>
                   One payment. Everything in the pathway.

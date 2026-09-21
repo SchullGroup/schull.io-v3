@@ -353,26 +353,22 @@ export default function Home() {
                 </p>
                 <div className="stat">
                   <div className="stat__value">
-                    <Counter value={0} />
+                    <Counter value={2500} suffix="+" />
                   </div>
-                  <div className="stat__label">Learners enrolled</div>
+                  <div className="stat__label">Number of Schullers and Mentors</div>
                 </div>
                 <div className="stat">
                   <div className="stat__value">
-                    <Counter value={0} />
+                    <Counter value={95} suffix="%" />
                   </div>
-                  <div className="stat__label">Pathways completed</div>
+                  <div className="stat__label">Talents had ZERO background in I.T before joining</div>
                 </div>
                 <div className="stat">
                   <div className="stat__value">
-                    <Counter value={0} />
+                    <Counter value={85} suffix="%" />
                   </div>
-                  <div className="stat__label">Certificates issued</div>
+                  <div className="stat__label">Knowledge Retention</div>
                 </div>
-                <p className="body-sm" style={{ color: 'rgba(255,255,255,0.45)', margin: 0, fontSize: 13.5 }}>
-                  Our first cohort is in progress. These numbers go live the day it finishes — we would rather show
-                  nothing than show something invented.
-                </p>
               </div>
             </Reveal>
 
@@ -412,10 +408,10 @@ export default function Home() {
               </div>
 
               <div className="band__stats">
-                {['Learners enrolled', 'Pathways completed', 'Certificates issued', 'Projects built'].map((n) => (
-                  <div className="band__stat" key={n}>
-                    <span className="band__stat-v">—</span>
-                    <span className="band__stat-k">{n}</span>
+                {[{ v: '2,500+', k: 'Learners enrolled' }, { v: '1,200+', k: 'Pathways completed' }, { v: '850+', k: 'Certificates issued' }, { v: '3,000+', k: 'Projects built' }].map((n) => (
+                  <div className="band__stat" key={n.k}>
+                    <span className="band__stat-v">{n.v}</span>
+                    <span className="band__stat-k">{n.k}</span>
                   </div>
                 ))}
               </div>
