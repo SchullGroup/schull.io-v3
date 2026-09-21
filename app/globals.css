@@ -711,12 +711,14 @@ h1, h2, h3, h4 {
    ------------------------------------------------------------ */
 .timeline { position: relative; display: flex; flex-direction: column; gap: 0; }
 .timeline__item { position: relative; padding-left: 58px; padding-bottom: 36px; }
-.timeline__item:last-child { padding-bottom: 0; }
+/* Keyed off --last, set in JS on the final item. Not :last-child — <Reveal>
+   wraps every item in its own div, so every item is a last-child. */
+.timeline__item--last { padding-bottom: 0; }
 .timeline__item::before {
   content: ''; position: absolute; left: 17px; top: 34px; bottom: -6px;
   width: 2px; background: rgba(7,28,63,0.18);
 }
-.timeline__item:last-child::before { display: none; }
+.timeline__item--last::before { display: none; }
 .timeline__dot {
   position: absolute; left: 0; top: 2px;
   width: 36px; height: 36px; border-radius: 50%;
