@@ -1,5 +1,6 @@
 import { Reveal, Accent, Scallop, Btn } from '../../components/ui';
 import { PATHWAYS } from '../../content/pathways';
+import { CTA } from '../../content/site';
 
 export const metadata = {
   title: 'Success Stories',
@@ -95,13 +96,13 @@ export default function SuccessStories() {
             </Reveal>
             <Reveal delay={80}>
               <p className="lede" style={{ color: 'var(--ink-700)' }}>
-                Capstone and portfolio work from across the schools. Every pathway ends in one of these.
+                Capstone and portfolio work from across the fields. Every pathway ends in one of these.
               </p>
             </Reveal>
           </div>
 
           <div className="grid grid-3">
-            {PATHWAYS.filter((p) => p.slug !== 'career-and-workplace-readiness').map((p, i) => (
+            {PATHWAYS.map((p, i) => (
               <Reveal key={p.slug} delay={(i % 3) * 80}>
                 <div className="card" style={{ height: '100%' }}>
                   <span className="chip chip--blue" style={{ marginBottom: 14 }}>
@@ -184,8 +185,8 @@ export default function SuccessStories() {
           </Reveal>
           <Reveal delay={80}>
             <div className="btn-row" style={{ justifyContent: 'center', marginTop: 30 }}>
-              <Btn href="/career-schools" variant="orange" size="lg">
-                Explore Career Schools
+              <Btn href="/career-fields" variant="orange" size="lg">
+                {CTA.exploreFieldsShort}
               </Btn>
             </div>
           </Reveal>

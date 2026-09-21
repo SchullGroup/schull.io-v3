@@ -62,7 +62,9 @@ export default function Header() {
               <Link
                 key={n.href}
                 href={n.href}
-                className={pathname.startsWith(n.href) ? 'is-active' : ''}
+                className={
+                  (n.match || [n.href]).some((m) => pathname.startsWith(m)) ? 'is-active' : ''
+                }
               >
                 {n.label}
               </Link>
