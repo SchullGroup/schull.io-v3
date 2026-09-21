@@ -19,6 +19,7 @@ import {
   TRACKS_INTRO,
   TRACKS_FOOTNOTE,
   COMPLETES_INTRO,
+  PATHWAY_DURATION,
   PLACEHOLDER_PRICE,
 } from '../../../content/pathways';
 import { getSchool } from '../../../content/schools';
@@ -99,9 +100,8 @@ export default async function PathwayPage({ params }) {
               <Glance k="You enter at" v="Foundation or Professional" />
               <Glance k="How you learn" v="Live + self paced" />
               <Glance k="Capstone" v="One, independent" />
-              <Glance k="Duration" v="[To be confirmed]" />
+              <Glance k="Duration" v={PATHWAY_DURATION} />
               <Glance k="Courses" v={`${p.courses.foundation.length + p.courses.professional.length} courses`} />
-              <Glance k="Projects" v="[To be confirmed]" />
               <Glance k="Price" v={PLACEHOLDER_PRICE} />
             </div>
           </Reveal>
@@ -387,7 +387,9 @@ export default async function PathwayPage({ params }) {
       <Scallop to="cream" />
       <section className="section bg-cream">
         <div className="container">
-          <div className="split">
+          {/* Top-aligned: .split centres its columns, which drops the shorter
+              left list's heading below the right one. */}
+          <div className="split" style={{ alignItems: 'start' }}>
             <Reveal>
               <div>
                 <h2 className="h3" style={{ fontSize: 'clamp(26px,3vw,38px)', marginBottom: 24 }}>

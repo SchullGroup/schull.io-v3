@@ -402,6 +402,9 @@ export const TRACKS_FOOTNOTE =
 /** Intro line for "What every learner completes", before the four stages. */
 export const COMPLETES_INTRO = 'Whichever track you start on, the pathway finishes the same way.';
 
+/** Expected duration, shown in the at-a-glance bar. Same for every pathway. */
+export const PATHWAY_DURATION = '3-6 months';
+
 /**
  * Dummy price shown until real pricing is confirmed — see README's
  * "Still needed before launch" list. Replace before this goes live.
