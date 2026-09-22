@@ -90,8 +90,7 @@ export default function Contact() {
                     <a href="tel:+2348101854429">+234 810 185 4429</a>
                     <br /><br />
                     <strong>📍 Address</strong><br />
-                    2nd Floor, 42 Montgomery Road, Sabo, Yaba, Lagos State, Nigeria<br />
-                    1738 Elton Road, Suite 130, Silver Spring, MD 20903, USA
+                    6th Floor, Mulliner Towers, 39 Alfred Rewane Road, Ikoyi, Lagos.
                     <br /><br />
                     <strong>🔗 Social</strong><br />
                     <a href="https://linkedin.com/company/schull" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="https://twitter.com/schullio" target="_blank" rel="noopener noreferrer">Twitter</a> · <a href="https://instagram.com/schullio" target="_blank" rel="noopener noreferrer">Instagram</a>
