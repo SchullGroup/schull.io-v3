@@ -22,7 +22,7 @@ export default function Footer() {
                 </p>
                 <p className="body-sm" style={{ margin: 0, marginBottom: 14 }}>
                   <strong style={{ color: 'rgba(255,255,255,0.8)' }}>📍 Address</strong><br />
-                  2nd Floor, 42 Montgomery Road, Sabo, Yaba, Lagos State, Nigeria<br />
+                  6th Floor, Mulliner Towers, 39 Alfred Rewane Road, Ikoyi, Lagos.<br />
                   1738 Elton Road, Suite 130, Silver Spring, MD 20903, USA
                 </p>
                 <p className="body-sm" style={{ margin: 0 }}>
