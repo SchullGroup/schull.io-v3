@@ -127,10 +127,6 @@ export const HOME = {
       a: 'Both. You study on your own schedule and join scheduled live sessions with instructors.',
     },
     {
-      q: 'Do I pay for a course or a pathway?',
-      a: 'You pay once for the full Career Pathway and get everything inside it. Individual courses are also available.',
-    },
-    {
       q: 'How long does a pathway take?',
       a: 'It depends on the pathway and your pace. Each pathway page shows the expected duration.',
     },
