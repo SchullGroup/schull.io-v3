@@ -452,3 +452,18 @@ export const CONTACT_SUBJECTS = [
   'organisations and partnerships',
   'something else',
 ];
+
+/** 'choosing a pathway' -> 'Choosing a pathway'. Used for the on-screen label
+ *  AND as the exact value the contact API expects for `topic` — keep both
+ *  uses on this one helper so they can never drift apart. */
+export const formatSubject = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+
+/**
+ * The Schull Academy contact form backend (see /api-docs on that host for the
+ * full spec). Currently the STAGING server — the team is not yet watching the
+ * production one (api-lms.schull.io). Switch by setting
+ * NEXT_PUBLIC_CONTACT_API_BASE in the Vercel project, no code change needed.
+ * No auth token is required; confirmed by testing directly against the API.
+ */
+export const CONTACT_API_URL =
+  `${process.env.NEXT_PUBLIC_CONTACT_API_BASE || 'https://schull-lms-backend-v2.onrender.com'}/api/schull-academy/contact`;

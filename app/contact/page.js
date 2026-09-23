@@ -2,11 +2,13 @@
 
 import { useState } from 'react';
 import { Reveal, Accent, Scallop, Icon } from '../../components/ui';
-import { CONTACT_ROUTES, CONTACT_SUBJECTS } from '../../content/site';
+import { CONTACT_ROUTES, CONTACT_SUBJECTS, CONTACT_API_URL, formatSubject } from '../../content/site';
 
 export default function Contact() {
   const [subject, setSubject] = useState(CONTACT_SUBJECTS[0]);
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
   return (
     <>
@@ -115,9 +117,39 @@ export default function Contact() {
                   </div>
                 ) : (
                   <form
-                    onSubmit={(e) => {
+                    onSubmit={async (e) => {
                       e.preventDefault();
-                      setSent(true);
+                      setError('');
+                      setSending(true);
+
+                      const data = new FormData(e.currentTarget);
+                      const payload = {
+                        name: data.get('name'),
+                        email: data.get('email'),
+                        phone: data.get('phone') || undefined,
+                        topic: formatSubject(subject),
+                        message: data.get('message'),
+                      };
+
+                      try {
+                        const res = await fetch(CONTACT_API_URL, {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify(payload),
+                        });
+                        const body = await res.json().catch(() => ({}));
+                        if (!res.ok) {
+                          throw new Error(body.message || 'Something went wrong. Please try again.');
+                        }
+                        setSent(true);
+                      } catch (err) {
+                        setError(
+                          err.message ||
+                            'We could not send your message. Please try again, or email us directly below.'
+                        );
+                      } finally {
+                        setSending(false);
+                      }
                     }}
                   >
                     <div className="form-grid">
@@ -158,8 +190,14 @@ export default function Contact() {
                         <textarea id="c-message" name="message" required />
                       </div>
 
-                      <button className="btn btn--primary btn--lg btn--block" type="submit">
-                        Send message
+                      {error && (
+                        <p className="body-sm" style={{ color: '#B42318', margin: 0 }} role="alert">
+                          {error}
+                        </p>
+                      )}
+
+                      <button className="btn btn--primary btn--lg btn--block" type="submit" disabled={sending}>
+                        {sending ? 'Sending…' : 'Send message'}
                       </button>
                     </div>
                   </form>
