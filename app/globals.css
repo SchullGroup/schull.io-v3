@@ -231,6 +231,7 @@ h1, h2, h3, h4 {
   text-align: center;
 }
 .btn:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
 .btn--primary { background: var(--blue); color: #fff; }
 .btn--primary:hover { background: var(--blue-600); box-shadow: var(--shadow-md); transform: translateY(-1px); }
