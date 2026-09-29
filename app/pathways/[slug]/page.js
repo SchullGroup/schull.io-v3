@@ -96,7 +96,7 @@ export default async function PathwayPage({ params }) {
         <div className="container">
           <Reveal>
             <div className="glance">
-              <Glance k="Career Field" v={school?.short} />
+              <Glance k="Career Pathway" v={school?.short} />
               <Glance k="You enter at" v="Foundation or Professional" />
               <Glance k="How you learn" v="Live + self paced" />
               <Glance k="Capstone" v="One, independent" />

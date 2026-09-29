@@ -2,7 +2,7 @@
  * Shared site copy — all verbatim from the Schull Academy website copy document.
  * Square brackets mark content that has not been decided yet.
  *
- * "Career Field" is the user-facing category word. The six entities themselves
+ * "Career Pathway" is the user-facing category word. The six entities themselves
  * keep their "School of ..." names — see the note in ./schools.js.
  */
 
@@ -14,8 +14,8 @@
  */
 export const NAV = [
   // `match` lists extra address prefixes that should also light this item up.
-  // Career Fields needs it because the detail pages live under /pathways.
-  { href: '/career-fields', label: 'Career Fields', match: ['/career-fields', '/pathways'] },
+  // Career Pathways needs it because the detail pages live under /pathways.
+  { href: '/career-pathways', label: 'Career Pathways', match: ['/career-pathways', '/pathways'] },
   { href: '/about', label: 'About Us' },
   { href: '/success-stories', label: 'Success Stories' },
   { href: '/faqs', label: 'FAQs' },
@@ -24,7 +24,7 @@ export const NAV = [
 /* ---------------- HOME ---------------- */
 
 export const HOME = {
-  eyebrow: 'Six Career Fields. One clear route into tech.',
+  eyebrow: 'Six Career Pathways. One clear route into tech.',
   h1a: 'Choose your career. Build your',
   h1accent: 'future',
   lede: 'Structured technology career pathways with live sessions, real projects and a certificate that proves you can do the work.',
@@ -71,15 +71,15 @@ export const HOME = {
     ],
   },
 
-  fieldsHeading: { h2a: 'Six Career', h2accent: 'Fields' },
+  fieldsHeading: { h2a: 'Six Career', h2accent: 'Pathways' },
   fieldsIntro:
-    'A Career Field is a career direction. Inside each one are the pathways, courses and projects that take you there.',
+    'A Career Pathway is a career direction. Inside each one are the courses and projects that take you there.',
 
   steps: [
     {
       n: '01',
       title: 'Choose your career direction',
-      text: 'Pick the Career Field that matches the kind of work you want to do.',
+      text: 'Pick the Career Pathway that matches the kind of work you want to do.',
     },
     {
       n: '02',
@@ -132,24 +132,24 @@ export const HOME = {
     },
   ],
 
-  closingLede: 'Pick a Career Field, choose your pathway and start building.',
+  closingLede: 'Pick a Career Pathway and start building.',
 };
 
-/* ---------------- CAREER FIELDS ---------------- */
+/* ---------------- CAREER PATHWAYS ---------------- */
 
-/** Everything on the /career-fields index. */
+/** Everything on the /career-pathways index. */
 export const FIELDS_PAGE = {
-  metaTitle: 'Career Fields',
+  metaTitle: 'Career Pathways',
   metaDescription:
-    'Six Career Fields. A Career Field is one area of work. Inside it are the pathways that take you from where you are now to doing that work for a living.',
-  pill: 'Six fields. One route each.',
-  h1a: 'Six Career Fields. Pick your',
+    'Six Career Pathways. A Career Pathway is one area of work. Inside it are the courses and projects that take you from where you are now to doing that work for a living.',
+  pill: 'Six pathways. One route each.',
+  h1a: 'Six Career Pathways. Pick your',
   h1accent: 'direction',
-  lede: 'A Career Field is one area of work. Inside it are the pathways that take you from where you are now to doing that work for a living.',
+  lede: 'A Career Pathway is one area of work. Inside it are the courses and projects that take you from where you are now to doing that work for a living.',
   assessmentCta: 'Not sure which one? Take the placement assessment',
 
   /** Rendered as `${itemEyebrow} 01`, `${itemEyebrow} 02`, … */
-  itemEyebrow: 'Field',
+  itemEyebrow: 'Pathway',
   learnHead: 'You will learn',
   leadsHead: 'Where it leads',
 
@@ -161,21 +161,21 @@ export const FIELDS_PAGE = {
     h2a: 'Career readiness runs through',
     h2accent: 'all of them',
     paras: [
-      'Whichever field you choose, you also complete the same career readiness track before you finish: communication, professional conduct, CV, LinkedIn, portfolio building, interview preparation, freelancing and career strategy.',
-      'It is not a separate field you have to choose. It is part of every pathway, and it is a requirement for certification, because skill you cannot present is skill nobody buys.',
+      'Whichever pathway you choose, you also complete the same career readiness track before you finish: communication, professional conduct, CV, LinkedIn, portfolio building, interview preparation, freelancing and career strategy.',
+      'It is not a separate pathway you have to choose. It is part of every pathway, and it is a requirement for certification, because skill you cannot present is skill nobody buys.',
     ],
   },
 
   closing: {
     h2a: 'Still',
     h2accent: 'deciding?',
-    lede: 'The placement assessment takes a few minutes. It will tell you which field fits you and what level to start at.',
+    lede: 'The placement assessment takes a few minutes. It will tell you which pathway fits you and what level to start at.',
   },
 };
 
 /**
  * Copy for /pathways/[slug] — the single page per subject. It absorbed the old
- * /career-fields/[slug] page, so the skill tags and job titles live here now.
+ * /career-pathways/[slug] page, so the skill tags and job titles live here now.
  */
 export const PATHWAY_DETAIL = {
   learnHead: 'What you will learn',
@@ -186,10 +186,10 @@ export const PATHWAY_DETAIL = {
 
 /** CTA labels that appear in more than one file. */
 export const CTA = {
-  exploreFields: 'Explore our Career Fields',
-  exploreFieldsShort: 'Explore Career Fields',
-  viewAllFields: 'View all Career Fields',
-  exploreThisField: 'Explore this field',
+  exploreFields: 'Explore our Career Pathways',
+  exploreFieldsShort: 'Explore Career Pathways',
+  viewAllFields: 'View all Career Pathways',
+  exploreThisField: 'Explore this pathway',
 };
 
 /* ---------------- PLACEMENT ASSESSMENT ---------------- */
@@ -316,10 +316,7 @@ export const FAQ_GROUPS = [
         q: 'Do I need a technology background?',
         a: 'No. Foundation level assumes no prior experience, and the placement assessment will tell you where to start.',
       },
-      {
-        q: 'What is a Career Field?',
-        a: 'One area of work. Each field holds the pathways, courses and projects that lead into it.',
-      },
+
       {
         q: 'What is a Career Pathway?',
         a: 'A complete route to a professional outcome. It includes the courses, live sessions, practical assignments, projects, a capstone, career readiness and a credential.',
@@ -418,7 +415,7 @@ export const FAQ_GROUPS = [
       },
       {
         q: 'What can I do after certification?',
-        a: 'Move into an advanced pathway, enter another Career Field, join the alumni community and employer opportunities, or come back as a mentor.',
+        a: 'Move into an advanced pathway, enter another Career Pathway, join the alumni community and employer opportunities, or come back as a mentor.',
       },
     ],
   },

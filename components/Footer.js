@@ -34,14 +34,14 @@ export default function Footer() {
             <div>
               <p className="footer__h">Learn</p>
               <ul className="footer__list">
-                <li><Link href="/career-fields">Career Fields</Link></li>
+                <li><Link href="/career-pathways">Career Pathways</Link></li>
                 <li><Link href="/placement-assessment">Placement Assessment</Link></li>
                 <li><Link href="/success-stories">Success Stories</Link></li>
               </ul>
             </div>
 
             <div>
-              <p className="footer__h">Career Fields</p>
+              <p className="footer__h">Career Pathways</p>
               <ul className="footer__list">
                 {SCHOOLS.map((s) => (
                   <li key={s.slug}>

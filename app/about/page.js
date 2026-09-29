@@ -226,7 +226,7 @@ export default function About() {
           </Reveal>
           <Reveal delay={80}>
             <div className="btn-row" style={{ justifyContent: 'center', marginTop: 30 }}>
-              <Btn href="/career-fields" variant="orange" size="lg">
+              <Btn href="/career-pathways" variant="orange" size="lg">
                 {CTA.exploreFieldsShort}
               </Btn>
               <Btn href="/contact" variant="onnavy" size="lg">

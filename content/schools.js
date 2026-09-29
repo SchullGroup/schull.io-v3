@@ -1,8 +1,8 @@
 /**
- * The six Career Fields.
+ * The six Career Pathways.
  *
  * Naming, deliberately inconsistent — do not "fix" this with a find-and-replace:
- * "Career Field" is the user-facing category word, but each entity keeps its own
+ * "Career Pathway" is the user-facing category word, but each entity keeps its own
  * "School of ..." name. The internal identifiers here (SCHOOLS, getSchool, and
  * SCHOOL_IMG / pathways[].school elsewhere) stay as "school" because they match
  * those names, not the category word.
