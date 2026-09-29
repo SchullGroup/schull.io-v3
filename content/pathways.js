@@ -1,5 +1,5 @@
 /**
- * The six Career Pathways, one per Career Field.
+ * The six Career Pathways, one per Career Pathway.
  * `school` is the foreign key into SCHOOLS in ./schools.js — see the naming note
  * at the top of that file before renaming anything.
  * All copy verbatim from the Schull Academy website copy document.

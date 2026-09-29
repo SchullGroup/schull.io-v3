@@ -52,7 +52,7 @@ export default function Home() {
 
           <Reveal immediate delay={240}>
             <div className="btn-row">
-              <Btn href="/career-fields" variant="primary" size="lg">
+              <Btn href="/career-pathways" variant="primary" size="lg">
                 {CTA.exploreFields}
               </Btn>
               <Btn href="/placement-assessment" variant="secondary" size="lg">
@@ -150,7 +150,7 @@ export default function Home() {
       </section>
 
       {/* ---------------------------------------------------------
-          5. SIX CAREER FIELDS
+          5. SIX CAREER PATHWAYS
           --------------------------------------------------------- */}
       <Scallop to="sky" />
       <section className="section bg-sky">
@@ -190,7 +190,7 @@ export default function Home() {
 
           <Reveal>
             <div className="btn-row" style={{ justifyContent: 'center', marginTop: 48 }}>
-              <Btn href="/career-fields" variant="primary" size="lg">
+              <Btn href="/career-pathways" variant="primary" size="lg">
                 {CTA.viewAllFields}
               </Btn>
             </div>
@@ -290,7 +290,7 @@ export default function Home() {
 
           <Reveal>
             <div className="btn-row" style={{ justifyContent: 'center', marginTop: 48 }}>
-              <Btn href="/career-fields" variant="primary" size="lg">
+              <Btn href="/career-pathways" variant="primary" size="lg">
                 {CTA.viewAllFields}
               </Btn>
             </div>
@@ -472,7 +472,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={240}>
             <div className="btn-row" style={{ justifyContent: 'center', marginTop: 32 }}>
-              <Btn href="/career-fields" variant="primary" size="lg">
+              <Btn href="/career-pathways" variant="primary" size="lg">
                 {CTA.exploreFields}
               </Btn>
               <Btn href="/contact" variant="secondary" size="lg">

@@ -24,7 +24,7 @@ export const metadata = {
     template: '%s | Schull Academy',
   },
   description:
-    'Structured technology career pathways with live sessions, real projects and a certificate that proves you can do the work. Six Career Fields. One clear route into tech.',
+    'Structured technology career pathways with live sessions, real projects and a certificate that proves you can do the work. Six Career Pathways. One clear route into tech.',
   keywords: [
     'Schull Academy',
     'tech career',
@@ -53,7 +53,7 @@ export const metadata = {
   openGraph: {
     title: 'Schull Academy — Choose your career. Build your future.',
     description:
-      'Structured technology career pathways with live sessions, real projects and a certificate that proves you can do the work. Six Career Fields. One clear route into tech.',
+      'Structured technology career pathways with live sessions, real projects and a certificate that proves you can do the work. Six Career Pathways. One clear route into tech.',
     url: 'https://schull.io',
     siteName: 'Schull Academy',
     images: [
