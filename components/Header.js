@@ -8,12 +8,13 @@ import { NAV } from '../content/site';
 export function Brand() {
   return (
     <Link href="/" className="brand" aria-label="Schull Academy home">
-      <img
-        src="/img/schull-academy-logo.png"
-        alt="Schull Academy"
-        className="brand__logo"
-        style={{ height: 38, width: 'auto' }}
-      />
+      {/* Two files, swapped by CSS depending on background (see
+          .footer .brand__logo rules in globals.css). The source logo is
+          black text, unreadable on the navy footer, so -white.png is a
+          generated recolour (black -> white, orange left alone) for dark
+          backgrounds. */}
+      <img src="/img/schull-academy-logo.png" alt="Schull Academy" className="brand__logo brand__logo--dark" />
+      <img src="/img/schull-academy-logo-white.png" alt="Schull Academy" className="brand__logo brand__logo--light" />
     </Link>
   );
 }
@@ -72,9 +73,14 @@ export default function Header() {
             aria-expanded={open}
             onClick={() => setOpen(true)}
           >
-            <span />
-            <span />
-            <span />
+            {/* Fixed-coordinate SVG, not stacked <span> divs — the old version
+                relied on grid layout + margins to space three bars, which
+                rendered as a clumped, uneven blob on mobile Safari. */}
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+              <rect y="0" width="18" height="2" rx="1" fill="#fff" />
+              <rect y="6" width="18" height="2" rx="1" fill="#fff" />
+              <rect y="12" width="18" height="2" rx="1" fill="#fff" />
+            </svg>
           </button>
         </div>
       </header>

@@ -441,21 +441,13 @@ h1, h2, h3, h4 {
   gap: 24px;
   height: 78px;
 }
-.brand { display: inline-flex; align-items: center; gap: 10px; }
-.brand__mark {
-  width: 34px; height: 34px; border-radius: 9px;
-  background: var(--blue); display: grid; place-items: center; flex: none;
-}
-.brand__text {
-  font-family: var(--font-display), sans-serif;
-  font-weight: 700; font-size: 20px; letter-spacing: -0.035em; color: var(--navy);
-  line-height: 1;
-}
-.brand__text small {
-  display: block; font-family: var(--font-body), sans-serif; font-weight: 500;
-  font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--ink-400); margin-top: 3px;
-}
+.brand { display: inline-flex; align-items: center; }
+.brand__logo { height: 38px; width: auto; display: block; }
+/* Source logo is black text — unreadable on the navy footer — so only one
+   of the two files (see components/Header.js Brand()) is shown at a time. */
+.brand__logo--light { display: none; }
+.footer .brand__logo--dark { display: none; }
+.footer .brand__logo--light { display: block; }
 .nav { display: none; gap: 30px; align-items: center; }
 @media (min-width: 1060px) { .nav { display: flex; } }
 .nav a {
@@ -480,10 +472,9 @@ h1, h2, h3, h4 {
   display: inline-grid; place-items: center;
   width: 46px; height: 46px; border-radius: var(--radius-pill);
   background: var(--navy); border: 0; cursor: pointer;
+  flex: none;
 }
 @media (min-width: 1060px) { .burger { display: none; } }
-.burger span { display: block; width: 18px; height: 2px; background: #fff; border-radius: 2px; }
-.burger span + span { margin-top: 4px; }
 
 .mobile-menu {
   position: fixed; inset: 0; z-index: 70;
@@ -809,8 +800,6 @@ h1, h2, h3, h4 {
   color: rgba(255,255,255,0.5); margin-bottom: 16px;
 }
 .footer__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
-.footer .brand__text { color: #fff; }
-.footer .brand__text small { color: rgba(255,255,255,0.45); }
 .newsletter { position: relative; margin-top: 14px; }
 .newsletter input {
   width: 100%; background: rgba(255,255,255,0.08);
