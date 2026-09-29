@@ -5,25 +5,15 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { NAV } from '../content/site';
 
-function Mark() {
-  return (
-    <span className="brand__mark" aria-hidden="true">
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2.5l9 5.2v8.6l-9 5.2-9-5.2V7.7l9-5.2z" stroke="#fff" strokeWidth="2" strokeLinejoin="round" />
-        <path d="M12 7.2l4.4 2.5v5l-4.4 2.5-4.4-2.5v-5L12 7.2z" fill="#FA9A19" />
-      </svg>
-    </span>
-  );
-}
-
 export function Brand() {
   return (
     <Link href="/" className="brand" aria-label="Schull Academy home">
-      <Mark />
-      <span className="brand__text">
-        Schull
-        <small>Academy</small>
-      </span>
+      <img
+        src="/img/schull-academy-logo.png"
+        alt="Schull Academy"
+        className="brand__logo"
+        style={{ height: 38, width: 'auto' }}
+      />
     </Link>
   );
 }
