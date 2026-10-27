@@ -86,7 +86,7 @@ export default function LoginPage() {
 
                 <div className="portal-card__foot">
                   <a
-                    href="#"
+                    href="https://portal.schull.io/"
                     className="btn btn--secondary btn--block"
                     target="_blank"
                     rel="noopener noreferrer"
