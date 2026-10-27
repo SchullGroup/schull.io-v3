@@ -150,7 +150,7 @@ export default function LoginPage() {
 
                 <div className="portal-card__foot">
                   <a
-                    href="#"
+                    href="https://learn.schull.io/auth/login"
                     className="btn btn--orange btn--block"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -228,10 +228,18 @@ export default function LoginPage() {
               Don&apos;t have a student account yet?
             </h2>
             <p className="lede" style={{ marginInline: 'auto', marginBottom: 28 }}>
-              Take our 5-minute placement assessment to find the right career pathway for your background, or explore our industry-backed programs.
+              Take our 5-minute placement assessment to find the right career pathway for your background, explore our industry-backed programs, or create an account to get started.
             </p>
             <div className="btn-row" style={{ justifyContent: 'center' }}>
-              <Link href="/placement-assessment" className="btn btn--orange">
+              <a
+                href="https://learn.schull.io/auth/create-account"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn--orange"
+              >
+                Create an account
+              </a>
+              <Link href="/placement-assessment" className="btn btn--secondary">
                 Take the placement assessment
               </Link>
               <Link href="/career-pathways" className="btn btn--secondary">

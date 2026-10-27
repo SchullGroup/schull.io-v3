@@ -66,9 +66,14 @@ export default function Header() {
             <Link href="/login" className="header__login">
               Log in
             </Link>
-            <Link href="#" className="btn btn--orange header__signup">
+            <a
+              href="https://learn.schull.io/auth/create-account"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn--orange header__signup"
+            >
               Create account
-            </Link>
+            </a>
           </div>
 
           <button
@@ -111,9 +116,15 @@ export default function Header() {
               <Link href="/login" className="mobile-menu__login" onClick={() => setOpen(false)}>
                 Log in
               </Link>
-              <Link href="#" className="btn btn--orange mobile-menu__signup" onClick={() => setOpen(false)}>
+              <a
+                href="https://learn.schull.io/auth/create-account"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn--orange mobile-menu__signup"
+                onClick={() => setOpen(false)}
+              >
                 Create account
-              </Link>
+              </a>
             </div>
             <Link
               href="/placement-assessment"
