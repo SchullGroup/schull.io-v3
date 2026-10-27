@@ -62,9 +62,19 @@ export default function Header() {
             ))}
           </nav>
 
-          <Link href="/placement-assessment" className="btn btn--orange header__cta">
-            Take the assessment
-          </Link>
+          <div className="header__actions">
+            <Link href="/login" className="header__login">
+              Log in
+            </Link>
+            <a
+              href="https://learn.schull.io/auth/create-account"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn--orange header__signup"
+            >
+              Create account
+            </a>
+          </div>
 
           <button
             className="burger"
@@ -102,7 +112,25 @@ export default function Header() {
             <Link href="/contact">Contact</Link>
           </nav>
           <div className="mobile-menu__foot">
-            <Link href="/placement-assessment" className="btn btn--orange btn--block btn--lg">
+            <div className="mobile-menu__auth">
+              <Link href="/login" className="mobile-menu__login" onClick={() => setOpen(false)}>
+                Log in
+              </Link>
+              <a
+                href="https://learn.schull.io/auth/create-account"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn--orange mobile-menu__signup"
+                onClick={() => setOpen(false)}
+              >
+                Create account
+              </a>
+            </div>
+            <Link
+              href="/placement-assessment"
+              className="btn btn--secondary btn--block mobile-menu__cta"
+              onClick={() => setOpen(false)}
+            >
               Take the assessment
             </Link>
           </div>
